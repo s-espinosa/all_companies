@@ -3,7 +3,9 @@ RSpec.describe AllCompanies do
     expect(AllCompanies::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it "can return a collection of companies" do
+    companies = AllCompanies::Finder.find
+
+    expect(companies.first.class).to eq(Company)
   end
 end
